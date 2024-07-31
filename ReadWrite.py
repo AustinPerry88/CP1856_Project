@@ -8,7 +8,7 @@ import csv
 
 def read_file(filename='movielist.csv'):
     """
-    Reads a csv file and turns it into a sales list. Defaults to prospects.csv 
+    Reads a csv file and turns it into a sales list. Defaults to movielist.csv 
     unless otherwise stated.
 
     """
@@ -21,7 +21,7 @@ def read_file(filename='movielist.csv'):
 
 def write_file(collection, filename='movielist.csv'):
     """
-    Writes the inputted collection to a csv file. Defaults to prospects_clean.csv unless
+    Writes the inputted collection to a csv file. Defaults to movielist.csv unless
     otherwise stated.
 
     """
