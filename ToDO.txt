@@ -6,3 +6,6 @@
 6. List videos by criteria.
 
 Main Program - 
+display_menu
+read_file
+write_file
