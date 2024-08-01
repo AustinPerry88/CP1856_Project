@@ -1,1 +1,10 @@
-
+def display_menu():
+    print("Welcome to the Video Library Management System!")
+    print("Choose from the options below:\n")
+    print("1. Add new video.")
+    print("2. Edit video.")
+    print("3. Delete video.")
+    print("4. Display all videos by name.")
+    print("5. Display detailed video information.")
+    print("6. List videos by criteria.")
+    print("7. Exit.\n")
