@@ -1,9 +1,9 @@
-1. Add new video.
-2. Edit video.
-3. Delete video.
-4. Display all videos by name.
-5. Display detailed video information.
-6. List videos by criteria.
+1. Add new video.  - AddVideo.py
+2. Edit video.  - EditVideo.py
+3. Delete video.  -DeleteVideo.py
+4. Display all videos by name.  DisplayVideos.py
+5. Display detailed video information.  - VideoInfo.py
+6. List videos by criteria.  - ListVideos.py
 
 Main Program - 
 display_menu
