@@ -1,4 +1,13 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Aug  2 13:19:36 2024
+
+@author: shang
+"""
+
 import csv
+FILENAME = "movielist.csv"
+
 
 def display_menu():
     print("Welcome to the Video Library Management System!")
@@ -12,7 +21,7 @@ def display_menu():
     print("7. Exit.\n")
 
 def save_all_videos(videos):
-    with open("movielist.csv", 'w') as file:
+    with open(FILENAME, 'w') as file:
         for video in videos:
             title = video[0]
             director = video[1]
@@ -25,7 +34,7 @@ def save_all_videos(videos):
 def get_all_videos():
     videos = []
     try:
-        with open("movielist.csv", 'r') as file:
+        with open(FILENAME, 'r') as file:
             for line in file:
                 s = line.split("#")
                 title = s[0]
@@ -37,6 +46,44 @@ def get_all_videos():
         return videos
     except FileNotFoundError:
         return videos
+    
+def add_video():
+    videos = get_all_videos()
+    title = input("Enter video title: ")
+    director = input("Enter director: ")
+    release_year = int(input("Enter release year: "))
+    genre = input("Enter genre: ")
+    duration = int(input("Enter duration (in minutes): "))
 
+    video = [title, director, release_year, genre, duration]
+    videos.append(video)
+    save_all_videos(videos)
+    print("Video added successfully!")
+    
+def edit_video():
+    videos = get_all_videos()
+    display_videos()
+    index = int(input("Enter the index of the video to edit: ")) - 1
 
+    if 0 <= index < len(videos):
+        new_title = input(f"Enter new title ({videos[index][0]}): ") or videos[index][0]
+        new_director = input(f"Enter new director ({videos[index][1]}): ") or videos[index][1]
+        new_release_year = input(f"Enter new release year ({videos[index][2]}): ") or videos[index][2]
+        new_genre = input(f"Enter new genre ({videos[index][3]}): ") or videos[index][3]
+        new_duration = input(f"Enter new duration ({videos[index][4]}): ") or videos[index][4]
+
+        videos[index] = [new_title, new_director, new_release_year, new_genre, new_duration]
+        save_all_videos(videos)
+        print("Video edited successfully!")
+    else:
+        print("Invalid index!")
+        
+def display_videos():
+    videos = get_all_videos()
+    if not videos:
+        print("No videos in the library.")
+    else:
+        for i, video in enumerate(videos, start=1):
+            print(f"{i}. {video[0]}")
+            
 
