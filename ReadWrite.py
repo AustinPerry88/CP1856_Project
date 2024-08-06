@@ -5,7 +5,6 @@ Created on Wed Jul 31 10:49:53 2024
 @author: Austin
 """
 import csv
-import os
 
 def read_file(filename='VideoList.csv'):
     """
@@ -34,8 +33,7 @@ def write_file(collection, filename='VideoList.csv'):
     """
     try:    
     
-        file_exists = os.path.exists(filename)
-        
+               
             
         with open(filename, 'w', newline='') as reg_file_writer:
             csv_file_writer = csv.writer(reg_file_writer)
