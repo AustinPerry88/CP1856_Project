@@ -12,8 +12,8 @@ def display_videos():
     Displays the title of all videos in the list.
 
     """
-    video_list = ReadWrite.read_file()
-    counter = 1 
+    video_list = ReadWrite.read_file('TestList.csv')
+    
     
    
     if not video_list:
@@ -21,8 +21,6 @@ def display_videos():
         return
         
             
-    for video in video_list:
-                
-        print(f"{counter}. {video[0]}")
-        counter += 1
+    for i, video in enumerate(video_list, start=1):
+            print(f"{i}. {video[0]}")
             
