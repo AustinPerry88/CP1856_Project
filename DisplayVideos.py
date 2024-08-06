@@ -15,12 +15,14 @@ def display_videos():
     video_list = ReadWrite.read_file()
     counter = 1 
     
+   
     if not video_list:
         print("Video list is empty.")
         return
-    
         
-    for video in video_list:
             
+    for video in video_list:
+                
         print(f"{counter}. {video[0]}")
         counter += 1
+            
