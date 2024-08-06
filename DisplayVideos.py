@@ -12,7 +12,7 @@ def display_videos():
     Displays the title of all videos in the list.
 
     """
-    video_list = ReadWrite.read_file('TestList.csv')
+    video_list = ReadWrite.read_file()
     
     
    
