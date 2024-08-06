@@ -29,3 +29,28 @@ def write_file(collection, filename='VideoList.csv'):
     with open(filename, 'w', newline='') as reg_file_writer:
         csv_file_writer = csv.writer(reg_file_writer)
         csv_file_writer.writerows(collection)
+
+
+
+
+
+
+import csv
+
+FILENAME = "movielist.csv"
+
+def get_all_videos():
+    videos = []
+    try:
+        with open(FILENAME, 'r') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                videos.append(row)
+    except FileNotFoundError:
+        pass
+    return videos
+
+def save_all_videos(videos):
+    with open(FILENAME, 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(videos)
