@@ -6,22 +6,23 @@ Created on Wed Jul 31 10:49:53 2024
 """
 import csv
 
-def read_file(filename='movielist.csv'):
+def read_file(filename='VideoList.csv'):
     """
-    Reads a csv file and turns it into a sales list. Defaults to movielist.csv 
+    Reads a csv file and turns it into a video list. Defaults to VideoList.csv 
     unless otherwise stated.
 
     """
-    prospects = []
+    video_list = []
     with open(filename, 'r', newline='') as reg_file_reader:
         csv_file_reader = csv.reader(reg_file_reader)
         for row in csv_file_reader:
-            prospects.append(row)
-    return prospects
+            if row:
+                video_list.append(row)
+    return video_list
 
-def write_file(collection, filename='movielist.csv'):
+def write_file(collection, filename='VideoList.csv'):
     """
-    Writes the inputted collection to a csv file. Defaults to movielist.csv unless
+    Writes the inputted collection to a csv file. Defaults to VideoList.csv unless
     otherwise stated.
 
     """
