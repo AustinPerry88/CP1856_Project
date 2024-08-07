@@ -5,10 +5,14 @@ Created on Fri Aug  2 15:39:15 2024
 @author: shang
 """
 
-from ReadWrite import get_all_videos, save_all_videos
+import ReadWrite
 
 def add_video():
-    videos = get_all_videos()
+    """
+   Adds a video from the video list based on the inputted index.
+
+   """
+    video_list = ReadWrite.read_file()
     title = input("Enter video title: ")
     director = input("Enter director: ")
     release_year = input("Enter release year: ")
@@ -16,6 +20,6 @@ def add_video():
     duration = input("Enter duration (in minutes): ")
 
     video = [title, director, release_year, genre, duration]
-    videos.append(video)
-    save_all_videos(videos)
+    video_list.append(video)
+    ReadWrite.write_file(video_list)
     print("Video added successfully!")
