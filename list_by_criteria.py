@@ -11,7 +11,7 @@ import ReadWrite
 def list_by_criteria():
     criteria = {
         "1": "director",
-        "2": "release_year",
+        "2": "release year",
         "3": "genre",
         "4": "duration"
     }
@@ -21,16 +21,19 @@ def list_by_criteria():
     print("2. Release Year")
     print("3. Genre")
     print("4. Duration")
+    print()
     choice = input("Enter criteria: ")
 
     if choice in criteria:
         video_list = ReadWrite.read_file()
         unique_values = sorted(set(video[int(choice)].lower() for video in video_list))
-
-        print(f"You selected {criteria[choice]}. The list of available {criteria[choice]} is below:")
+        
+        print()
+        print(f"You selected {criteria[choice]}. The list of available {criteria[choice]}s is below:")
         for i, unique_value in enumerate(unique_values, start=1):
            print(f"{i}. {unique_value}")
 
+        print()
         selection = int(input("Enter selection: ")) - 1
 
         if 0 <= selection < len(unique_values):

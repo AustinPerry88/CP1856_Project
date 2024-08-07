@@ -5,6 +5,7 @@ Created on Tue Aug  6 10:57:27 2024
 @author: Austin
 """
 import ReadWrite
+import DisplayVideos
 
 def delete_video():
     """
@@ -13,6 +14,8 @@ def delete_video():
     """
 
     video_list = ReadWrite.read_file()
+    DisplayVideos.display_videos()
+    print()
     
     while True:   
     

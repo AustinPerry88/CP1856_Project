@@ -6,7 +6,7 @@ Created on Fri Aug  2 15:39:28 2024
 """
 
 import ReadWrite
-import display_videos
+import DisplayVideos
 
 def edit_video():
     """
@@ -14,7 +14,8 @@ def edit_video():
 
    """
     video_list = ReadWrite.read_file()
-    display_videos.display_videos()
+    DisplayVideos.display_videos()
+    print()
     index = int(input("Enter the index of the video to edit: ")) - 1
 
     if 0 <= index < len(video_list):

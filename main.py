@@ -6,9 +6,9 @@ Created on Fri Aug  2 13:19:36 2024
 """
 import add_video
 import edit_video
-# import delete_video
-import display_videos
-# import display_detailed_video
+import DeleteVideo
+import DisplayVideos
+import VideoInfo
 import list_by_criteria
 
 
@@ -28,17 +28,18 @@ def main():
     display_menu()
     while True:
         choice = input("\nEnter your choice: ")
-
+        print()
+  
         if choice == '1':
             add_video.add_video()
         elif choice == '2':
             edit_video.edit_video()
         elif choice == '3':
-            delete_video.delete_video()
+            DeleteVideo.delete_video()
         elif choice == '4':
-            display_videos.display_videos()
+            DisplayVideos.display_videos()
         elif choice == '5':
-            display_detailed_video.display_detailed_video()
+            VideoInfo.video_info()
         elif choice == '6':
             list_by_criteria.list_by_criteria()
         elif choice == '7':
