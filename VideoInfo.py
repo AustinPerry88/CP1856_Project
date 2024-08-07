@@ -6,19 +6,23 @@ Created on Tue Aug  6 10:58:09 2024
 """
 
 import ReadWrite
+import DisplayVideos
 
 def video_info():
     """
-    Displays the full information of all videos in the video list.
+    Displays the full information of the selected video from the video list.
 
     """   
     
     video_list = ReadWrite.read_file()
     
     while True:   
-    
+        
+        DisplayVideos.display_videos()
+        
         try:
-            choice = (int(input("Enter the movie index: ")) -1)
+            choice = (int(input("\nEnter the movie index: ")) -1)
+            print()
             
             if 0 <= choice < len(video_list):
             
