@@ -23,6 +23,9 @@ def read_file(filename='VideoList.csv'):
     
     except FileNotFoundError:
         print("File not found.")
+
+ “except FileNotFoundError:
+        return video_list” Maybe this better, otherwise keep print File not found.
         
     
 def write_file(collection, filename='VideoList.csv'):
