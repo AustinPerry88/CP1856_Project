@@ -5,9 +5,10 @@ Created on Fri Aug  2 15:39:52 2024
 @author: shang
 """
 
-from ReadWrite import get_all_videos
 
-def list_videos_by_criteria():
+import ReadWrite
+
+def list_by_criteria():
     criteria = {
         "1": "director",
         "2": "release_year",
@@ -23,14 +24,25 @@ def list_videos_by_criteria():
     choice = input("Enter criteria: ")
 
     if choice in criteria:
-        value = input(f"You selected {criteria[choice]}. Enter the value to search: ")
-        videos = get_all_videos()
-        results = [video for video in videos if video[int(choice) - 1].lower() == value.lower()]
+        video_list = ReadWrite.read_file()
+        unique_values = sorted(set(video[int(choice)].lower() for video in video_list))
 
-        if results:
-            for video in results:
-                print(f"{video[0]}")
+        print(f"You selected {criteria[choice]}. The list of available {criteria[choice]} is below:")
+        for i, unique_value in enumerate(unique_values, start=1):
+           print(f"{i}. {unique_value}")
+
+        selection = int(input("Enter selection: ")) - 1
+
+        if 0 <= selection < len(unique_values):
+           selected_value = unique_values[selection]
+           results = [video for video in video_list if video[int(choice)].lower() == selected_value]
+
+           if results:
+               for result in results:
+                   print(f"{result[0]}")
+           else:
+               print("No videos found.")
         else:
-            print("No videos found.")
+           print("Invalid selection.")
     else:
-        print("Invalid criteria.")
+       print("Invalid criteria.")
