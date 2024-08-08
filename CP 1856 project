@@ -1,0 +1,46 @@
+Video Library Management System
+Introduction
+This Video Library Management System allows users to manage their video collections. Users can add, edit, delete, and display video information and search for videos based on various criteria.
+Features
+1.	Add a new video
+2.	Edit video information
+3.	Delete a video
+4.	Display all videos
+5.	Display detailed video information
+6.	Search for videos by criteria
+7.	Exit the system
+Main Modules
+•	main.py: Entry point of the program, manages the menu and user input.
+•	add_video.py: Adds a new video.
+•	edit_video.py: Edits existing video information.
+•	DeleteVideo.py: Deletes a video.
+•	DisplayVideos.py: Displays all videos.
+•	VideoInfo.py: Displays detailed information of a video.
+•	list_by_criteria.py: Searches for videos based on criteria.
+•	ReadWrite.py: Handles reading and writing video data.
+
+Block Diagram
+
+
+
+
+
+
+
+
+
+
+
+
+
+Project Flow Explanation
+1.	Display Main Menu: main.py calls display_menu function to display menu options and waits for user choice.
+2.	Handle User Choice:
+•	If the user chooses to add a new video, it calls add_video.py.
+•	If the user chooses to edit a video, it calls edit_video.py.
+•	If the user chooses to delete a video, it calls DeleteVideo.py.
+•	If the user chooses to display all videos, it calls DisplayVideos.py.
+•	If the user chooses to display detailed video information, it calls VideoInfo.py.
+•	If the user chooses to search for videos by criteria, it calls list_by_criteria.py.
+•	If the user chooses to exit the system, the flow break.
+3.	Read/Write Video Data: All modules that handle video data operations utilize ReadWrite.py to read and write data to the CSV file. 
